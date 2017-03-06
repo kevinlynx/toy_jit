@@ -4,7 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#if 0
 #define TRACE(s, args...) printf(s, ##args)
+#else
+#define TRACE(s, args...) 
+#endif
 
 static jlong compile(JNIEnv* env, jclass clazz, jbyteArray ptr, int max_locals, int max_labels,
     int arg_cnt, int ret_type) {
